@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightgray;
+    margin: 0;
+    padding: 20px;
+}
+
+.cv {
+    width: min(800px, calc(100% - 60px));
+    margin: auto;
+    background-color: white;
+    padding: 30px;
+    box-sizing: content-box;
+}
+
+.resume-header {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    color: black;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+h2 {
+    margin-top: 20px;
+    color: black;
+}
+
+hr {
+    border: 1px solid black;
+}
+
+ul {
+    margin-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+strong {
+    font-size: 17px;
+}
+
+a {
+    color: inherit;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .cv {
+        width: auto;
+        padding: 20px;
+    }
+}

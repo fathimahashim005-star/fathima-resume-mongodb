@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= resume.name %> | Resume</title>
+    <link rel="stylesheet" href="/cv.css">
+</head>
+<body>
+    <main class="cv">
+        <header class="resume-header">
+            <h1><%= resume.name %></h1>
+            <% if (resume.address) { %><p><%= resume.address %></p><% } %>
+            <% if (resume.phone) { %><p>Phone: <%= resume.phone %></p><% } %>
+            <% if (resume.email) { %><p>Email: <a href="mailto:<%= resume.email %>"><%= resume.email %></a></p><% } %>
+        </header>
+
+        <% if (resume.objective) { %>
+        <section>
+            <h2>Professional Objectives</h2>
+            <hr>
+            <p><%= resume.objective %></p>
+        </section>
+        <% } %>
+
+        <% if (resume.education && resume.education.length) { %>
+        <section>
+            <h2>Education</h2>
+            <hr>
+            <ul>
+                <% resume.education.forEach(item => { %>
+                    <li>
+                        <strong><%= item.institution %></strong><br>
+                        <%= item.qualification %>
+                        <% if (item.period) { %> (<%= item.period %>)<% } %>
+                        <% if (item.result) { %><br><%= item.result %><% } %>
+                    </li>
+                <% }) %>
+            </ul>
+        </section>
+        <% } %>
+
+        <% if (resume.skills && resume.skills.length) { %>
+        <section>
+            <h2>Skills</h2>
+            <hr>
+            <ul>
+                <% resume.skills.forEach(group => { %>
+                    <li>
+                        <strong><%= group.category %>:</strong>
+                        <%= (group.items || []).join(', ') %>
+                    </li>
+                <% }) %>
+            </ul>
+        </section>
+        <% } %>
+
+        <% if (resume.projects && resume.projects.length) { %>
+        <section>
+            <h2>Projects</h2>
+            <hr>
+            <ul>
+                <% resume.projects.forEach(project => { %>
+                    <li>
+                        <strong><%= project.title %></strong><br>
+                        <%= project.description %>
+                    </li>
+                <% }) %>
+            </ul>
+        </section>
+        <% } %>
+
+        <% if (resume.certifications && resume.certifications.length) { %>
+        <section>
+            <h2>Certifications</h2>
+            <hr>
+            <ul>
+                <% resume.certifications.forEach(item => { %><li><%= item %></li><% }) %>
+            </ul>
+        </section>
+        <% } %>
+
+        <% if (resume.interests && resume.interests.length) { %>
+        <section>
+            <h2>Interests</h2>
+            <hr>
+            <ul>
+                <% resume.interests.forEach(item => { %><li><%= item %></li><% }) %>
+            </ul>
+        </section>
+        <% } %>
+
+        <% if (resume.languages && resume.languages.length) { %>
+        <section>
+            <h2>Languages</h2>
+            <hr>
+            <ul>
+                <% resume.languages.forEach(item => { %><li><%= item %></li><% }) %>
+            </ul>
+        </section>
+        <% } %>
+
+        <% if (resume.declaration) { %>
+        <section>
+            <h2>Declaration</h2>
+            <hr>
+            <p><%= resume.declaration %></p>
+        </section>
+        <% } %>
+    </main>
+</body>
+</html>
