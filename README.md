@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Fathima Hashim - Dynamic Resume (MongoDB + Express + EJS)
 
 This project displays the resume using data read from MongoDB. The EJS file contains the layout; the resume text and lists are loaded from the database.
@@ -90,3 +91,7 @@ The document stores:
 To change the displayed resume information, update the document in the MongoDB collection named `resumes`. Refresh the browser to see the updated information. The initial data is in `seed-data.js`; it is used only when the collection has no resume document.
 
 **Note:** This version is a read-only public resume page. It does not include an admin form or login for editing data through the browser. Use MongoDB Compass or `mongosh` to edit the document.
+=======
+# fathima-resume-mongodb
+Dynamic Resume Website using Node.js, Express.js, MongoDB and EJS
+
